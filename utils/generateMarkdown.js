@@ -1,58 +1,67 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(data, license) {
+//Returns a license badge
+function renderLicenseBadge(license) {
   if (license === "Apache 2.0") {
-    var badge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+    return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
   }
   if (license === "MIT") {
-    var badge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+    return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
   }
   if (license === "ISC") {
-    var badge = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
+    return "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)";
   }
   if (license === "GNU GPL v3") {
-    var badge = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+    return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
   }
   if (license === "Unlicensed") {
-    var badge = "";
+    return "";
   }
-  console.log(data);
-renderLicenseLink(data, license, badge);
 };
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(data, license, badge) {
+//Returns license link
+function renderLicenseLink(license) {
   if (license === "Apache 2.0") {
-    var link = "https://opensource.org/licenses/Apache-2.0";
+    return "https://opensource.org/licenses/Apache-2.0";
   }
   if (license === "MIT") {
-    var link = "https://opensource.org/licenses/MIT";
+    return "https://opensource.org/licenses/MIT";
   }
   if (license === "ISC") {
-    var link = "https://opensource.org/licenses/ISC";
+    return "https://opensource.org/licenses/ISC";
   }
   if (license === "GNU GPL v3") {
-    var link = "https://opensource.org/licenses/GPL-3.0";
+    return "https://opensource.org/licenses/GPL-3.0";
   }
   if (license === "Unlicensed") {
-    var link = "This project is unlicensed";
+    return "";
   }
-  renderMarkdown(data, license, badge, link);
+  
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+//Returns license section description
+function renderLicenseSection(license) {
+  if (license === "Apache 2.0") {
+    return "This project is licensed under Apache 2.0: ";
+  }
+  if (license === "MIT") {
+    return "This project is licensed under MIT: ";
+  }
+  if (license === "ISC") {
+    return "This project is licensed under ISC: ";
+  }
+  if (license === "GNU GPL v3") {
+    return "This project is licensed under GNU GPL v3: ";
+  }
+  if (license === "Unlicensed") {
+    return "This project is unlicensed.";
+  }
+}
 
-// TODO: Create a function to generate markdown for README
+//Function to generate README.md file
 function generateMarkdown(data) {
   var license = data.license;
-  renderLicenseBadge(data, license);
-}
-
-
-function renderMarkdown(data, badge, link) {
+  var badge = renderLicenseBadge(license);
+  var link = renderLicenseLink(license);
+  var section = renderLicenseSection(license);
    return `
 # ${data.title}${badge}
   
@@ -63,14 +72,15 @@ function renderMarkdown(data, badge, link) {
 - [Usage](#usage)
 - [Contribution](#contribution)
 - [Test](#test)
-- [Questions](#questions) - [License](#license)
+- [Questions](#questions)
+- [License](#license)
   
 ## Description:
 ${data.description}
 ## Installation:
 ${data.installation}
-## Installation:
-${data.installation}
+## Usage:
+${data.usage}
 ## Contribution:
 ${data.contribution}
 ## Test:
@@ -78,7 +88,8 @@ ${data.test}
 ## Questions:
 - Visit my GitHub page: github.com/${data.username}
 - If you have any question please email me at: ${data.email}
-## License: ${link}`;
+## License:
+${section}${link}`;
   }
 
 module.exports = generateMarkdown
