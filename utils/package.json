@@ -1,0 +1,22 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "creates README.md file for your project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bluekev22/README-Generator.git"
+  },
+  "author": "Kevin Shank",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bluekev22/README-Generator/issues"
+  },
+  "homepage": "https://github.com/Bluekev22/README-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  }
+}
