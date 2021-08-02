@@ -86,7 +86,7 @@ ${data.contribution}
 ## Test:
 ${data.test}
 ## Questions:
-- Visit my GitHub page: github.com/${data.username}
+- Visit my GitHub page: https://github.com/${data.username}
 - If you have any question please email me at: ${data.email}
 ## License:
 ${section}${link}`;
