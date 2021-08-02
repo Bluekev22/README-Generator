@@ -24,7 +24,7 @@ Clone the repository and make pull request.
 ## Test:
 This application has no tests.
 ## Questions:
-- Visit my GitHub page: github.com/Bluekev22
+- Visit my GitHub page: https://github.com/Bluekev22
 - If you have any question please email me at: Kevin_Shank@yahoo.com
 ## License:
 This project is licensed under MIT: https://opensource.org/licenses/MIT
